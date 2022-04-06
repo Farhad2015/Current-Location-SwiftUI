@@ -11,6 +11,7 @@
 		51A49EC627FD6A9D00D28F70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A49EC527FD6A9D00D28F70 /* ContentView.swift */; };
 		51A49EC827FD6A9E00D28F70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51A49EC727FD6A9E00D28F70 /* Assets.xcassets */; };
 		51A49ECB27FD6A9E00D28F70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51A49ECA27FD6A9E00D28F70 /* Preview Assets.xcassets */; };
+		51A49ED327FD6CF000D28F70 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A49ED227FD6CF000D28F70 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		51A49EC527FD6A9D00D28F70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		51A49EC727FD6A9E00D28F70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51A49ECA27FD6A9E00D28F70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		51A49ED227FD6CF000D28F70 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		51A49EC227FD6A9D00D28F70 /* Current Location SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				51A49ED127FD6CD800D28F70 /* LocationHelper */,
 				51A49EC327FD6A9D00D28F70 /* Current_Location_SwiftUIApp.swift */,
 				51A49EC527FD6A9D00D28F70 /* ContentView.swift */,
 				51A49EC727FD6A9E00D28F70 /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				51A49ECA27FD6A9E00D28F70 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		51A49ED127FD6CD800D28F70 /* LocationHelper */ = {
+			isa = PBXGroup;
+			children = (
+				51A49ED227FD6CF000D28F70 /* LocationManager.swift */,
+			);
+			path = LocationHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				51A49EC627FD6A9D00D28F70 /* ContentView.swift in Sources */,
 				51A49EC427FD6A9D00D28F70 /* Current_Location_SwiftUIApp.swift in Sources */,
+				51A49ED327FD6CF000D28F70 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
