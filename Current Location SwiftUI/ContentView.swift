@@ -20,7 +20,14 @@ struct ContentView: View {
         return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
     }
     
-    
+    @State private var name = ""
+    @State private var streetName = ""
+    @State private var streetNumber = ""
+    @State private var city = ""
+    @State private var state = ""
+    @State private var zipCode = ""
+    @State private var country = ""
+    @State private var isoCountryCode = ""
     
     var body: some View {
         ZStack {
@@ -31,8 +38,22 @@ struct ContentView: View {
                     Text("longitude: \(userLongitude)")
                 }
                 
-                Text("Address: ")
+                Text("Address ").font(.title3).textCase(.uppercase)
                     .padding(.top, 30)
+                
+                HStack {
+                    VStack(alignment: .leading,spacing: 8) {
+                        Text("Name: \(self.name)").font(.caption)
+                        Text("streetName: \(self.streetName)").font(.caption)
+                        Text("streetNumber: \(self.streetNumber)").font(.caption)
+                        Text("city: \(self.city)").font(.caption)
+                        Text("state: \(self.state)").font(.caption)
+                        Text("zipCode: \(self.zipCode)").font(.caption)
+                        Text("country: \(self.country)").font(.caption)
+                        Text("isoCountryCode: \(self.isoCountryCode)").font(.caption)
+                    }
+                    Spacer()
+                }.padding()
                 
             }.onChange(of: userLatitude) { newValue in
                 print("Latitude: \(userLatitude)")
@@ -48,18 +69,15 @@ struct ContentView: View {
 
                     let reversedGeoLocation = ReversedGeoLocation(with: placemark)
                     print(reversedGeoLocation.formattedAddress)
-                    print("name is: \(reversedGeoLocation.name)")
-                    print("streetName is: \(reversedGeoLocation.streetName)")
-                    print("streetNumber is: \(reversedGeoLocation.streetNumber)")
-                    print("city is: \(reversedGeoLocation.city)")
-                    print("state is: \(reversedGeoLocation.state)")
-                    print("zipCode is: \(reversedGeoLocation.zipCode)")
-                    print("country is: \(reversedGeoLocation.country)")
-                    print("isoCountryCode is: \(reversedGeoLocation.isoCountryCode)")
-                    // Apple Inc.,
-                    // 1 Infinite Loop,
-                    // Cupertino, CA 95014
-                    // United States
+                    
+                    self.name = reversedGeoLocation.name
+                    self.streetName = reversedGeoLocation.streetName
+                    self.streetNumber = reversedGeoLocation.streetNumber
+                    self.city = reversedGeoLocation.city
+                    self.state = reversedGeoLocation.state
+                    self.zipCode = reversedGeoLocation.zipCode
+                    self.country = reversedGeoLocation.country
+                    self.isoCountryCode = reversedGeoLocation.isoCountryCode
                 }
             }
         }
