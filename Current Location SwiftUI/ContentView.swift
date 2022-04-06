@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
     
@@ -19,6 +20,8 @@ struct ContentView: View {
         return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
     }
     
+    
+    
     var body: some View {
         ZStack {
             VStack {
@@ -26,6 +29,37 @@ struct ContentView: View {
                 HStack {
                     Text("latitude: \(userLatitude)")
                     Text("longitude: \(userLongitude)")
+                }
+                
+                Text("Address: ")
+                    .padding(.top, 30)
+                
+            }.onChange(of: userLatitude) { newValue in
+                print("Latitude: \(userLatitude)")
+                print("Longitude: \(userLongitude)")
+                let location = CLLocation(latitude: locationManager.lastLocation?.coordinate.latitude ?? 0.0, longitude: locationManager.lastLocation?.coordinate.longitude ?? 0.0)
+                CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+
+                    guard let placemark = placemarks?.first else {
+                        let errorString = error?.localizedDescription ?? "Unexpected Error"
+                        print("Unable to reverse geocode the given location. Error: \(errorString)")
+                        return
+                    }
+
+                    let reversedGeoLocation = ReversedGeoLocation(with: placemark)
+                    print(reversedGeoLocation.formattedAddress)
+                    print("name is: \(reversedGeoLocation.name)")
+                    print("streetName is: \(reversedGeoLocation.streetName)")
+                    print("streetNumber is: \(reversedGeoLocation.streetNumber)")
+                    print("city is: \(reversedGeoLocation.city)")
+                    print("state is: \(reversedGeoLocation.state)")
+                    print("zipCode is: \(reversedGeoLocation.zipCode)")
+                    print("country is: \(reversedGeoLocation.country)")
+                    print("isoCountryCode is: \(reversedGeoLocation.isoCountryCode)")
+                    // Apple Inc.,
+                    // 1 Infinite Loop,
+                    // Cupertino, CA 95014
+                    // United States
                 }
             }
         }

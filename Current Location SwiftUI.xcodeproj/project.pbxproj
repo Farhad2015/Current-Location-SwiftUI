@@ -12,6 +12,7 @@
 		51A49EC827FD6A9E00D28F70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51A49EC727FD6A9E00D28F70 /* Assets.xcassets */; };
 		51A49ECB27FD6A9E00D28F70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51A49ECA27FD6A9E00D28F70 /* Preview Assets.xcassets */; };
 		51A49ED327FD6CF000D28F70 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A49ED227FD6CF000D28F70 /* LocationManager.swift */; };
+		51A49ED527FD867E00D28F70 /* AddressByLatLong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A49ED427FD867E00D28F70 /* AddressByLatLong.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		51A49EC727FD6A9E00D28F70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51A49ECA27FD6A9E00D28F70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51A49ED227FD6CF000D28F70 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		51A49ED427FD867E00D28F70 /* AddressByLatLong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressByLatLong.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				51A49ED227FD6CF000D28F70 /* LocationManager.swift */,
+				51A49ED427FD867E00D28F70 /* AddressByLatLong.swift */,
 			);
 			path = LocationHelper;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				51A49EC627FD6A9D00D28F70 /* ContentView.swift in Sources */,
 				51A49EC427FD6A9D00D28F70 /* Current_Location_SwiftUIApp.swift in Sources */,
 				51A49ED327FD6CF000D28F70 /* LocationManager.swift in Sources */,
+				51A49ED527FD867E00D28F70 /* AddressByLatLong.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
